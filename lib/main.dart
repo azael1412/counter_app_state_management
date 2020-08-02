@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:counter_app/counter/bloc/num_manager_inherited_widget.dart';
+
 import 'package:counter_app/counter/bloc/num_manager_bloc.dart';
 import 'package:counter_app/counter/ui/screens/counter_screen.dart';
+
+import 'package:provider/provider.dart';
 
 void main() => runApp(MyApp());
 
@@ -11,7 +13,7 @@ class MyApp extends StatefulWidget {
 }
 
 class MyAppState extends State<MyApp> {
-  final NumManagerBloc numManagerBloc = NumManagerBloc();
+  // final NumManagerBloc numManagerBloc = NumManagerBloc();
 
   @override
   void initState() {
@@ -20,17 +22,16 @@ class MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return NumManager(
-        numManagerBloc: this.numManagerBloc,
-        child: AnimatedBuilder(
-            animation: this.numManagerBloc,
-            builder: (context, _) {
-              return MaterialApp(
-                  debugShowCheckedModeBanner: false,
-                  theme: ThemeData(
-                    primarySwatch: Colors.blue,
-                  ),
-                  home: CounterScreen());
-            }));
+    return ChangeNotifierProvider(
+      create: (context) => NumManagerBloc(),
+      child: Consumer<NumManagerBloc>(builder: (context, bloc, widget) {
+        return MaterialApp(
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            home: CounterScreen());
+      }),
+    );
   }
 }
