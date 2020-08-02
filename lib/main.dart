@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'counter/ui/bloc/num_manager_inherited_widget.dart';
-import 'package:counter_app/counter/ui/bloc/num_manager_bloc.dart';
+import 'package:counter_app/counter/bloc/num_manager_inherited_widget.dart';
+import 'package:counter_app/counter/bloc/num_manager_bloc.dart';
 import 'package:counter_app/counter/ui/screens/counter_screen.dart';
 
 void main() => runApp(MyApp());

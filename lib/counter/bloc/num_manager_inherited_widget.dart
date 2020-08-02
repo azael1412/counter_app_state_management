@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:counter_app/counter/ui/bloc/num_manager_bloc.dart';
+import 'package:counter_app/counter/bloc/num_manager_bloc.dart';
 
 class NumManager extends InheritedWidget {
   final Widget child;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:counter_app/counter/ui/bloc/num_manager_inherited_widget.dart';
+import 'package:counter_app/counter/bloc/num_manager_inherited_widget.dart';
 
 class CounterScreen extends StatefulWidget {
   CounterScreen({Key key}) : super(key: key);
