@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:counter_app/counter/bloc/num_manager_inherited_widget.dart';
+
+import 'package:counter_app/counter/bloc/num_manager_bloc.dart';
+
+import 'package:provider/provider.dart';
 
 class CounterScreen extends StatefulWidget {
   CounterScreen({Key key}) : super(key: key);
@@ -11,11 +14,11 @@ class CounterScreen extends StatefulWidget {
 class _CounterScreenState extends State<CounterScreen> {
   @override
   Widget build(BuildContext context) {
-    final numManagerBloc = NumManager.of(context).numManagerBloc;
+    final numManagerBloc = Provider.of<NumManagerBloc>(context);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text("Contador"),
+        title: Text("Contador con Provider"),
         centerTitle: true,
         elevation: 1.0,
       ),
