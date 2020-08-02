@@ -24,13 +24,11 @@ class MyAppState extends State<MyApp> {
         numManagerBloc: this.numManagerBloc,
         child: AnimatedBuilder(
             animation: this.numManagerBloc,
-            builder: (context, _) {
-              return MaterialApp(
-                  debugShowCheckedModeBanner: false,
-                  theme: ThemeData(
-                    primarySwatch: Colors.blue,
-                  ),
-                  home: CounterScreen());
-            }));
+            builder: (context, widget) => MaterialApp(
+                debugShowCheckedModeBanner: false,
+                theme: ThemeData(
+                  primarySwatch: Colors.blue,
+                ),
+                home: CounterScreen())));
   }
 }
